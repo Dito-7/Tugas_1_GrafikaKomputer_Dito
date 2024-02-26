@@ -12,13 +12,13 @@ public class soal2 extends Frame implements ActionListener {
 
     soal2() {
         addWindowListener(new MyFinishWindow());
-        timer = new Timer(50, this); // 50 milliseconds delay between updates
+        timer = new Timer(50, this);
         timer.start();
     }
 
     public void actionPerformed(ActionEvent e) {
-        angle++; // Increment angle for animation
-        repaint(); // Trigger repaint to update the animation
+        angle++;
+        repaint();
     }
 
     public void paint(Graphics g) {

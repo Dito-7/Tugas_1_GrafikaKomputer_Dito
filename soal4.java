@@ -13,19 +13,17 @@ public class soal4 extends Frame implements ActionListener {
 
     soal4() {
         addWindowListener(new MyFinishWindow());
-        timer = new Timer(50, this); // 50 milliseconds delay between updates
+        timer = new Timer(50, this);
         timer.start();
     }
 
     public void actionPerformed(ActionEvent e) {
-        angle++; // Increment angle for animation
-        updateClosestPoint(); // Update the closest point to the sun on the planet
-        repaint(); // Trigger repaint to update the animation
+        angle++;
+        updateClosestPoint();
+        repaint();
     }
 
-    // Method to update the position of the closest point to the sun on the planet
     private void updateClosestPoint() {
-        // Calculate the position of the closest point to the sun on the planet
         double closestX = sunX + orbitRadius * Math.cos(Math.toRadians(angle - 120)); // Menggeser sudut sebesar 120
                                                                                       // derajat (1/3 orbit)
         double closestY = sunY + orbitRadius * Math.sin(Math.toRadians(angle - 120));
@@ -60,7 +58,7 @@ public class soal4 extends Frame implements ActionListener {
                 2 * planetRadius);
 
         // Draw the closest point to the sun on the planet
-        g2d.setColor(Color.RED);
+        g2d.setColor(Color.PINK);
         g2d.fillOval((int) (closestPointToSun.x - 3), (int) (closestPointToSun.y - 3), 6, 6);
     }
 

@@ -1,16 +1,9 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-/**
- * An example for the use of a GeneralPath to draw a car.
- *
- * @author Frank Klawonn
- *         Last change 07.01.2005
- */
 public class soal1 extends Frame {
-    // Constructor
+
     soal1() {
-        // Enables the closing of the window.
         addWindowListener(new MyFinishWindow());
     }
 
@@ -24,10 +17,8 @@ public class soal1 extends Frame {
         BasicStroke bs = new BasicStroke(3.0f);
         g2d.setStroke(bs);
 
-        // The GeneralPath to decribe the car.
         GeneralPath gp = new GeneralPath();
 
-        // Start at the lower front of the car.
         gp.moveTo(60, 80);
 
         gp.lineTo(200, 80);
@@ -45,18 +36,11 @@ public class soal1 extends Frame {
         g2d.draw(gp);
 
         g2d.setStroke(new BasicStroke(1.0f));
+
         // Draw a coordinate system.
         drawSimpleCoordinateSystem(250, 200, g2d);
-
     }
 
-    /**
-     * Draws a coordinate system (according to the window coordinates).
-     *
-     * @param xmax x-coordinate to which the x-axis should extend.
-     * @param ymax y-coordinate to which the y-axis should extend.
-     * @param g2d  Graphics2D object for drawing.
-     */
     public static void drawSimpleCoordinateSystem(int xmax, int ymax,
             Graphics2D g2d) {
         int xOffset = 30;
@@ -78,7 +62,6 @@ public class soal1 extends Frame {
         // y-axis.
         g2d.drawLine(xOffset, yOffset, xOffset, ymax);
 
-        // Marks and labels for the y-axis.
         s = "  "; // for indention of numbers < 100
         for (int i = yOffset + step; i <= ymax; i = i + step) {
             g2d.drawLine(xOffset - 2, i, xOffset + 2, i);
